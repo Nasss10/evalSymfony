@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste de tous les appartements{% endblock %}
+
+{% block body %}
+    <h1>Liste de tous les appartements</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Adresse</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for appartement in appartements %}
+                <tr>
+                    <td>{{ appartement.Titre }}</td>
+                    <td>{{ appartement.prix }}</td>
+                    <img src="{{ asset('appartement.lienImage') }}"/>
+
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
